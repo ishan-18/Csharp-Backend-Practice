@@ -21,7 +21,7 @@ namespace api.Repositories
             _mapper = mapper;
         }
 
-        public async Task<Category> Create(CategoryDTO categoryDTO)
+        public async Task<Category> Create(CategoryCreateDTO categoryDTO)
         {
             var category = _mapper.Map<Category>(categoryDTO);
             await _context.Categories.AddAsync(category);
@@ -56,14 +56,14 @@ namespace api.Repositories
             return category;
         }
 
-        public async Task<Category?> Update(int id, CategoryDTO categoryDTO)
+        public async Task<Category?> Update(int id, CategoryUpdateDTO categoryDTO)
         {
             var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
             if(category == null)
             {
                 return null;
             }
-            category.Id = categoryDTO.Id;
+
             category.Name =categoryDTO.Name;
 
             await _context.SaveChangesAsync();

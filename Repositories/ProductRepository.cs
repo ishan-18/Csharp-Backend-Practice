@@ -21,7 +21,7 @@ namespace api.Repositories
             _mapper = mapper;
         }
 
-        public async Task<Product> Create(ProductDTO productDTO)
+        public async Task<Product> Create(ProductCreateDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
             await _context.Products.AddAsync(product);
@@ -56,14 +56,14 @@ namespace api.Repositories
             return product;
         }
 
-        public async Task<Product?> Update(int id, ProductDTO productDTO)
+        public async Task<Product?> Update(int id, ProductUpdateDTO productDTO)
         {
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if(product == null)
             {
                 return null;
             }
-            product.Id = productDTO.Id;
+
             product.Name = productDTO.Name;
             product.Price = productDTO.Price;
             product.CategoryId = productDTO.CategoryId;

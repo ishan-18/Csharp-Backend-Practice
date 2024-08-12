@@ -141,3 +141,4 @@ C:\Users\IG110398\Desktop\TestCode\api\bin\Debug\net8.0\Microsoft.AspNetCore.Jso
 C:\Users\IG110398\Desktop\TestCode\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\IG110398\Desktop\TestCode\api\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\IG110398\Desktop\TestCode\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\IG110398\Desktop\TestCode\api\obj\Debug\net8.0\api.sourcelink.json

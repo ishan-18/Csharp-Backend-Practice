@@ -12,4 +12,18 @@ namespace api.DTOs
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
     }
+
+    public class ProductCreateDTO
+    {
+        public string Name { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public int CategoryId { get; set; }
+    }
+
+    public class ProductUpdateDTO
+    {
+        public string Name { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public int CategoryId { get; set; }
+    }
 }

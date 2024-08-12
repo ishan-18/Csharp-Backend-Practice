@@ -11,8 +11,8 @@ namespace api.Repositories
     {
         Task<List<Category>> GetAll();
         Task<Category?> GetCategoryById(int id);
-        Task<Category> Create(CategoryDTO categoryDTO);
-        Task<Category?> Update(int id, CategoryDTO categoryDTO);
+        Task<Category> Create(CategoryCreateDTO categoryDTO);
+        Task<Category?> Update(int id, CategoryUpdateDTO categoryDTO);
         Task<Category?> Delete(int id);
     }
 }

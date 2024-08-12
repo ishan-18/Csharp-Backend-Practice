@@ -15,8 +15,20 @@ namespace api.Mappings
             CreateMap<ProductDTO, Product>();
             CreateMap<Product, ProductDTO>();
 
+            CreateMap<ProductCreateDTO, Product>();
+            CreateMap<Product, ProductCreateDTO>();
+
+            CreateMap<ProductUpdateDTO, Product>();
+            CreateMap<Product, ProductUpdateDTO>();
+
             CreateMap<CategoryDTO, Category>();
             CreateMap<Category, CategoryDTO>();
+
+            CreateMap<CategoryCreateDTO, Category>();
+            CreateMap<Category, CategoryCreateDTO>();
+
+            CreateMap<CategoryUpdateDTO, Category>();
+            CreateMap<Category, CategoryUpdateDTO>();
         }
     }
 }

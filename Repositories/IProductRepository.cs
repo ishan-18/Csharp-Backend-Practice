@@ -11,8 +11,8 @@ namespace api.Repositories
     {
         Task<List<Product>> GetAll();
         Task<Product?> GetProductById(int id);
-        Task<Product> Create(ProductDTO productDTO);
-        Task<Product?> Update(int id, ProductDTO productDTO);
+        Task<Product> Create(ProductCreateDTO productDTO);
+        Task<Product?> Update(int id, ProductUpdateDTO productDTO);
         Task<Product?> Delete(int id);
     }
 }

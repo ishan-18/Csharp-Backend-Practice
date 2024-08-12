@@ -57,12 +57,12 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CategoryDTO categoryDTO)
+        public async Task<IActionResult> Create([FromBody] CategoryCreateDTO categoryDTO)
         {
             try
             {
-                await _categoryRepo.Create(categoryDTO);
-                return CreatedAtAction(nameof(GetCategoryById), new { id = categoryDTO.Id }, _mapper.Map<CategoryDTO>(categoryDTO));
+                var category = await _categoryRepo.Create(categoryDTO);
+                return CreatedAtAction(nameof(GetCategoryById), new { id = category.Id }, _mapper.Map<CategoryDTO>(category));
             }
             catch (Exception e)
             {
@@ -72,7 +72,7 @@ namespace api.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] CategoryDTO categoryDTO)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] CategoryUpdateDTO categoryDTO)
         {
             try
             {

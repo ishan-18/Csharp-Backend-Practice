@@ -55,12 +55,12 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ProductDTO productDTO)
+        public async Task<IActionResult> Create([FromBody] ProductCreateDTO productDTO)
         {
             try
             {
                 var product = await _prodRepo.Create(productDTO);
-                return CreatedAtAction(nameof(GetProductById), new {id = product.Id}, _mapper.Map<ProductDTO>(productDTO));
+                return CreatedAtAction(nameof(GetProductById), new {id = product.Id}, _mapper.Map<ProductDTO>(product));
             }
             catch (Exception e)
             {
@@ -70,7 +70,7 @@ namespace api.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] ProductDTO productDTO)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] ProductUpdateDTO productDTO)
         {
             try
             {
